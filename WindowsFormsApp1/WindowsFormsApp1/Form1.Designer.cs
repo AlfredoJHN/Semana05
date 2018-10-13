@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtOperando1 = new System.Windows.Forms.TextBox();
-            this.txtOperando2 = new System.Windows.Forms.TextBox();
+            this.tbOperando1 = new System.Windows.Forms.TextBox();
+            this.tbOperando2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbOperador = new System.Windows.Forms.ComboBox();
@@ -39,21 +39,19 @@
             this.tbResultado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // txtOperando1
+            // tbOperando1
             // 
-            this.txtOperando1.Location = new System.Drawing.Point(198, 49);
-            this.txtOperando1.Name = "txtOperando1";
-            this.txtOperando1.Size = new System.Drawing.Size(147, 20);
-            this.txtOperando1.TabIndex = 0;
-            this.txtOperando1.TextChanged += new System.EventHandler(this.txtOperando1_TextChanged_1);
+            this.tbOperando1.Location = new System.Drawing.Point(198, 49);
+            this.tbOperando1.Name = "tbOperando1";
+            this.tbOperando1.Size = new System.Drawing.Size(147, 20);
+            this.tbOperando1.TabIndex = 0;
             // 
-            // txtOperando2
+            // tbOperando2
             // 
-            this.txtOperando2.Location = new System.Drawing.Point(198, 92);
-            this.txtOperando2.Name = "txtOperando2";
-            this.txtOperando2.Size = new System.Drawing.Size(147, 20);
-            this.txtOperando2.TabIndex = 1;
-            this.txtOperando2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.tbOperando2.Location = new System.Drawing.Point(198, 92);
+            this.tbOperando2.Name = "tbOperando2";
+            this.tbOperando2.Size = new System.Drawing.Size(147, 20);
+            this.tbOperando2.TabIndex = 1;
             // 
             // label1
             // 
@@ -63,7 +61,6 @@
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Primer Operando";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -73,7 +70,6 @@
             this.label2.Size = new System.Drawing.Size(100, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Segundo Operando";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // cmbOperador
             // 
@@ -88,7 +84,6 @@
             this.cmbOperador.Name = "cmbOperador";
             this.cmbOperador.Size = new System.Drawing.Size(147, 21);
             this.cmbOperador.TabIndex = 4;
-            this.cmbOperador.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnCalcular
             // 
@@ -138,8 +133,8 @@
             this.Controls.Add(this.cmbOperador);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtOperando2);
-            this.Controls.Add(this.txtOperando1);
+            this.Controls.Add(this.tbOperando2);
+            this.Controls.Add(this.tbOperando1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -149,8 +144,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtOperando1;
-        private System.Windows.Forms.TextBox txtOperando2;
+        private System.Windows.Forms.TextBox tbOperando1;
+        private System.Windows.Forms.TextBox tbOperando2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbOperador;

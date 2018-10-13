@@ -17,39 +17,38 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtOperando1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtOperando1_TextChanged_1(object sender, EventArgs e)
-        {
-
+            //var logica = new LogicaCalculadora();
+            LogicaCalculadora logica = new LogicaCalculadora();
+            tbResultado.Text = logica.Operar(tbOperando1.Text,
+                                             tbOperando2.Text, 
+                                             cmbOperador.Text);
+            /*
+            switch (cmbOperador.Text)
+            {
+                case "Suma":
+                    tbResultado.Text = (Convert.ToDouble(tbOperando1.Text) +
+                    Convert.ToDouble(tbOperando2.Text)).ToString();
+                    break;
+                case "Resta":
+                    tbResultado.Text = (Convert.ToDouble(tbOperando1.Text) +
+                    Convert.ToDouble(tbOperando2.Text)).ToString();
+                    break;
+                case "Multiplicación":
+                    tbResultado.Text = (Convert.ToDouble(tbOperando1.Text) +
+                    Convert.ToDouble(tbOperando2.Text)).ToString();
+                    break;
+                case "División":
+                    tbResultado.Text = (Convert.ToDouble(tbOperando1.Text) +
+                    Convert.ToDouble(tbOperando2.Text)).ToString();
+                    break;
+                default:
+                    System.Windows.Forms.MessageBox.Show(
+                        "No se ha seleccionado un operador");
+                    break;
+            }
+            */
         }
     }
 }
