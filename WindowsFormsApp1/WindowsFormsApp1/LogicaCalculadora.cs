@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
             string ResultadoConvertido;
             double operando1 = Convert.ToDouble(operandoA);
             double operando2 = Convert.ToDouble(operandoB);
-            EnumeradoOperadores OperadorEnumerado;
+            EnumeradoOperadores OperadorEnumerado = ConvertirStringEnumeradoOperadores(Operador);
             double? Resultado = Operar(operando1, operando2, OperadorEnumerado);
             if (Resultado != null)
             {
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
                     Resultado = operandoA * operandoB;
                     break;
                 case EnumeradoOperadores.División:
-                    if (operandoA != 0)
+                    if (operandoB != 0)
                     {
                         Resultado = operandoA / operandoB;
                     }
