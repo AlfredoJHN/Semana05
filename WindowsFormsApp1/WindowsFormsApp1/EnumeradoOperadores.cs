@@ -8,9 +8,10 @@ namespace WindowsFormsApp1
 {
     public enum EnumeradoOperadores
     {
-        Suma,
-        Resta,
-        Multiplicación,
-        División
+        Suma=1,
+        Resta=2,
+        Multiplicación=3,
+        División=4,
+        Desconocido=100
     }
 }

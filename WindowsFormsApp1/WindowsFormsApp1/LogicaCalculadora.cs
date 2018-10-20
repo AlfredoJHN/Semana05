@@ -9,24 +9,61 @@ namespace WindowsFormsApp1
     public class LogicaCalculadora
     {
         /// <summary>
-        /// 
+        /// Esta función es la cara de la interfaz para hacer el cálculo de las operaciones.
         /// </summary>
-        /// <param name="operandoA"></param>
-        /// <param name="operandoBm"></param>
-        /// <param name="Operador"></param>
-        /// <returns></returns>
+        /// <param name="operandoA">Hilera de caracteres que representa el primer operando.</param>
+        /// <param name="operandoB">Hilera de caracteres que representa el segundo operando.</param>
+        /// <param name="Operador">Hilera de caracteres que representa el operador.</param>
+        /// <returns>Hilera de caracteres que representa el resultado de la operación.</returns>
         public string Operar(string operandoA, string operandoB, string Operador)
         {
+            string ResultadoConvertido;
             double operando1 = Convert.ToDouble(operandoA);
             double operando2 = Convert.ToDouble(operandoB);
-            double Resultado = Operar(operando1, operando2, Operador);
-            string ResultadoConvertido = Resultado.ToString();
+            EnumeradoOperadores OperadorEnumerado;
+            double? Resultado = Operar(operando1, operando2, OperadorEnumerado);
+            if (Resultado != null)
+            {
+                ResultadoConvertido = Resultado.ToString();
+            }
+            else
+            {
+                ResultadoConvertido = "Error";
+            }
             return ResultadoConvertido;
         }
-        private double Operar(double operandoA, double operandoB,
+
+        private EnumeradoOperadores ConvertirStringEnumeradoOperadores(string Operador)
+        {
+            EnumeradoOperadores Resultado;
+            switch (Operador)
+            {
+                case "Suma":
+                case "Plus":
+                    Resultado = EnumeradoOperadores.Suma;
+                    break;
+                case "Resta":
+                case "Minus":
+                    Resultado = EnumeradoOperadores.Resta;
+                    break;
+                case "División":
+                case "Divide":
+                    Resultado = EnumeradoOperadores.División;
+                    break;
+                case "Multiplicación":
+                case "Multiply":
+                    Resultado = EnumeradoOperadores.Multiplicación;
+                    break;
+                default:
+                    Resultado = EnumeradoOperadores.Desconocido;
+                    break;
+            }
+            return Resultado;
+        }
+        private double? Operar(double operandoA, double operandoB,
                               EnumeradoOperadores Operador)
         {
-            double Resultado = 0.0;
+            double? Resultado = 0.0; //double? -> puede asignar valores null
             switch (Operador)
             {
                 case EnumeradoOperadores.Suma:
@@ -39,11 +76,19 @@ namespace WindowsFormsApp1
                     Resultado = operandoA * operandoB;
                     break;
                 case EnumeradoOperadores.División:
-                    Resultado = operandoA / operandoB;
+                    if (operandoA != 0)
+                    {
+                        Resultado = operandoA / operandoB;
+                    }
+                    else
+                        Resultado = null;
+                    break;
+                case EnumeradoOperadores.Desconocido:
+                    Resultado = null;
                     break;
                 default:
                     System.Windows.Forms.MessageBox.Show(
-                        "No se ha seleccionado un operador");
+                        "No se ha seleccionado ningún operador");
                     break;
             }
             return Resultado;
